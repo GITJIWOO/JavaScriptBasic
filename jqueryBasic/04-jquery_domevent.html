@@ -106,15 +106,16 @@
         // toggle은 함수 여러개를 나열해서 넣으면
         // 클릭할 때 마다 함수가 바뀌어서 실행됩니다.
         // .toggle(함수1(){}, 함수2(){}, 함수3(){} ...)
+        // jquery 3버전에선 사용 불가능
         // $("#btn4").toggle(function(){ // 1번 함수
         //     // JS의 이벤트에서 this는 클릭당한 태그입니다.
-        //     $(this).next().css("backgound-color", "red");
+        //     $(this).toggle(true).css("backgorund-color", "red");
         // }, function(){ // 2번 함수
-        //     $(this).next().css("backgound-color", "orange");
+        //     $(this).toggle(true).css("backgorund-color", "orange");
         // }, function(){ // 3번 함수
-        //     $(this).next().css("backgound-color", "yellow");
+        //     $(this).toggle(true).css("backgorund-color", "yellow");
         // }, function(){ // 4번 함수
-        //     $(this).next().css("backgound-color", "blue");
+        //     $(this).toggle(true).css("backgorund-color", "blue");
         // });
 
         // hover는 마우스가 선택요소 영역에 오버되거나

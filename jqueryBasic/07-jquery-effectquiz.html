@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    #list {
+        width: 300px;
+        display: none;
+        background-color: aquamarine;
+    }
+</style>
+<script>
+    // 아까처럼 메뉴판을 만들어주세요
+    // 이번에는 hover가 아닌 onclick 이벤트를 걸어서
+    // 버튼을 클릭하면 메뉴판이 모이고 다시 클릭하면
+    // 메뉴판이 사라지도록 하겠습니다.
+    // 단, 메뉴판이 안 보일때는 버튼 글씨가 "메뉴보가"이고
+    // 메뉴판이 보일 때는 버튼 글씨가 "메뉴닫기"가 되도록
+    // 처리해주세요.
+    $(() => {
+        $("#button").click(function (){
+            // 몌뉴 숨겼다 노출
+            $("#list").toggle("normal");
+
+            // 아무것도 안 집어넣으면
+            // $("요소").text() 는 innerHTML을 리턴한다.
+            // .text("바꿀문자") 를 넣으면 교체해줍니다.
+            console.log($(this).text());
+
+            // 버튼 문구 변경
+            if($(this)[0].innerText === "메뉴 닫기"){
+                $(this)[0].innerText = "메뉴 보기"
+            } else if($(this)[0].innerText === "메뉴 보기"){
+                $(this)[0].innerText = "메뉴 닫기";      
+            }
+
+            // 디버깅
+            console.log($(this));
+        });
+    });
+</script>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+    <div id="menu">
+        <h2><button id="button">메뉴 보기</button></h2>
+        <ul id="list">
+            <li>파스타 : 13000원</li>
+            <li>불백 : 7500원</li>
+            <li>김치찌개 : 6500원</li>
+            <li>차돌된장찌개 : 7000원</li>
+            <li>순두부찌개 : 9000원</li>
+        </ul>
+    </div>
+</body>
+</html>
